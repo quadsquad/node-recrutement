@@ -57,17 +57,3 @@ app.get('/verify-url', async (req, res) => {
         res.status(500).json(err.message);
     }
 });
-
-app.get('/verify-phone', async (req, res) => {
-    try {
-        axios.get('https://phonevalidation.abstractapi.com/v1/?api_key=44571ae9a979475b90b68ec42224722b&phone='+req.query.phonenumber)
-    .then(response => {
-        return res.status(200).json({msg: "PHONE NUMBER YOU ENTERED IS VALID"});
-    })
-    .catch(error => {
-        return res.status(400).json({msg: "PHONE NUMBER YOU ENTERED IS INVALID"});
-    });
-    } catch (err) {
-        res.status(500).json(err.message);
-    }
-})

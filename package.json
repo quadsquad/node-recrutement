@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "email-verifier": "^0.4.1",
     "express": "^4.17.1",
     "url-exists": "^1.0.3"

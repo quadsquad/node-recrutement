@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const PORT = 8097;
+require("dotenv").config();
+const PORT = process.env.PORT || 8097;
 const app = express();
 const Verifier = require("email-verifier");
 let verifier = new Verifier("at_fbYHeD2J55059T4krj83uGu7XN7ul");
@@ -23,7 +24,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(cors());
 
-app.listen(PORT, console.log("Listening on PORT: "+PORT));
+app.listen(PORT, () => console.log(`Listening on PORT ${ PORT }`));
 
 app.get('/verify-email', async (req, res) => {
   try {
